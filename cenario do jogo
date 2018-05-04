@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr 27 14:38:56 2018
+
+@author: rosen
+"""
+
+import pygame
+import sys
+from pygame.locals import *
+from random import randrange
+#inicialização
+
+
+pygame.init()
+tela = pygame.display.set_mode((1240, 1000), 0, 32)
+
+pygame.display.set_caption ('Jogo DeSoft')
+
+#imagem fundo=(https://wallpapersafari.com/w/byP9VE)
+fundo = pygame.image.load("byP9VE.jpg").convert()
+
+#imagem aviao = (http://http://pixelartmaker.com/art/01f426eb630c6cf.png)
+aviao = pygame.image.load("01f426eb630c6cf.png").convert_alpha()
+
+#loopingprincipal
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            exit()
+        tela.blit(fundo, (0,0))
+        tela.blit(aviao, (10, 10))
+    pygame.display.update()
+    
